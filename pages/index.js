@@ -1,5 +1,7 @@
 import React from 'react'
+
 import MeetupList from '../components/meetups/MeetupList'
+import Link from 'next'
 
 const DUMMY_MEETUPS =[
     {
