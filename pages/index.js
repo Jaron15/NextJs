@@ -1,7 +1,7 @@
-import React from 'react'
+import React from 'react';
 
-import MeetupList from '../components/meetups/MeetupList'
-import Link from 'next'
+import MeetupList from '../components/meetups/MeetupList';
+import Link from 'next';
 
 const DUMMY_MEETUPS =[
     {
@@ -20,10 +20,27 @@ const DUMMY_MEETUPS =[
     }
 ]
 
-const HomePage = () => {
+const HomePage = (props) => {
+   
   return (
-    <MeetupList meetups={DUMMY_MEETUPS} />
+    <MeetupList meetups={props.meetups} />
   )
 }
+
+//function that comes with nextjs that gets the props used in the 
+//HomePage component BEFORE rendering HomePage
+//this code will not show up on the server side 
+//this will fetch the data for prerendering 
+export async function getStaticProps() {
+ //fetch data form an API 
+
+ //must return an object
+ //must have props 
+    return {
+        props: {
+            meetups: DUMMY_MEETUPS
+        }
+    }
+} 
 
 export default HomePage
