@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { MongoClient } from 'mongodb'
+import Head from 'next/head';
 
 import MeetupList from '../components/meetups/MeetupList';
 import Link from 'next';
@@ -7,7 +8,16 @@ import Link from 'next';
 const HomePage = (props) => {
    
   return (
+    <Fragment>
+    <Head>
+        <title>React Meetups</title>
+        <meta 
+        name='description'
+        contents="Browse a huge list of highly active React meetups!"
+        />
+    </Head>
     <MeetupList meetups={props.meetups} />
+    </Fragment>
   )
 }
 
