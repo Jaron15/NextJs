@@ -1,9 +1,9 @@
 import React, { Fragment } from 'react';
 import { MongoClient, ObjectId } from 'mongodb'
-import MeetupDetail from '../../components/meetups/meetupDetail';
+import MeetupDetail from '../../components/meetups/MeetupDetail';
 import Head from 'next/head';
 
-const meetupDetails = (props) => {
+const MeetupDetails = (props) => {
   return (
     <Fragment>
         <Head>
@@ -73,4 +73,4 @@ export async function getStaticProps(context) {
     }
 }
 
-export default meetupDetails
+export default MeetupDetails
