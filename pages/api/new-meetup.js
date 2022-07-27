@@ -9,7 +9,7 @@ async function handler(req, res) {
 //NewMeetupForm.js(collects enteredData) => new-meetup/index.js(sends a req to this api w enteredData)
         const data = req.body;
 //connect to backend 
-        const client = await MongoClient.connect(process.env.CONNECT_STRING);
+        const client = await MongoClient.connect(process.env.NEXT_PUBLIC_CONNECT_STRING);
         const db = client.db();
 //meetups collection 
         const meetupsCollection =db.collection('meetups');

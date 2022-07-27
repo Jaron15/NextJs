@@ -24,7 +24,7 @@ const meetupDetails = (props) => {
 
 export async function getStaticPaths() {
     //connect to the backend
-    const client = await MongoClient.connect(process.env.CONNECT_STRING);
+    const client = await MongoClient.connect(process.env.NEXT_PUBLIC_CONNECT_STRING);
         const db = client.db();
         //meetups collection
         const meetupsCollection = db.collection('meetups');
@@ -44,7 +44,7 @@ export async function getStaticProps(context) {
 //grabs the param from url that should be the meetupId
     const meetupId = context.params.meetupId;
 //connect to backend 
-    const client = await MongoClient.connect(process.env.CONNECT_STRING);
+    const client = await MongoClient.connect(process.env.NEXT_PUBLIC_CONNECT_STRING);
         const db = client.db();
         //go into the meetups collection 
         const meetupsCollection = db.collection('meetups');
