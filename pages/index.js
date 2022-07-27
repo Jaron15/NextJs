@@ -19,7 +19,7 @@ export async function getStaticProps() {
  //fetch data form an API 
  const client = await MongoClient.connect(process.env.CONNECT_STRING);
         const db = client.db();
-        const meetupsCollection =db.collection('meetups');
+        const meetupsCollection = db.collection('meetups');
         const meetups = await meetupsCollection.find().toArray();
         client.close();
 
